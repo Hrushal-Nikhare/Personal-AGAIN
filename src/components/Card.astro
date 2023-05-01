@@ -7,62 +7,10 @@ export interface Props {
 const { title, description, image } = Astro.props;
 ---
 
-<!-- <style>
-    .card{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    .img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 0.5s ease;
-    }
-    .buffer{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: all 0.5s ease;
-        background-color: rgba(0,0,0,0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        transform: translateY(100%);
-    }
-    .buffer h1{
-        color: white;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    .buffer p{
-        color: white;
-        font-size: 1rem;
-        text-align: center;
-    }
-    .card:hover .img{
-        transform: scale(1.1);
-    }
-    /* Buffer slides in on hover */
-    .card:hover .buffer{
-        transform: translateY(0%);
-    }
-
-
-</style> --><!-- <div class="card"> --><!-- SO here is the idea: --><!-- Image is shown --><!-- On hover a buffer slides in which is tranlucent black --><!-- Title and description comes with the buffer --><!-- On hover the buffer slides out --><!-- <img class="img" src={image} alt="">
-    <div class="buffer">
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
-    </div>
-</div> -->
 <style>
+  /* make the image cover everything regardless of ratio */
   figure {
+    image-rendering: optimizeSpeed;
     display: grid;
     border-radius: 1rem;
     overflow: hidden;
@@ -76,7 +24,7 @@ const { title, description, image } = Astro.props;
   figure figcaption {
     display: grid;
     align-items: end;
-    font-size: 2.3rem;
+    /* font-size: 2.3rem; */
     font-weight: bold;
     color: #000000;
     padding: 0.75rem;
@@ -94,11 +42,21 @@ const { title, description, image } = Astro.props;
     transform: scale(1.2);
   }
   figure figcaption {
-    -webkit-mask: none;
-    color: #fff;
+   -webkit-mask: none;
+  }
+  h1,h2,h3,h4,h5,h6{
+      color: white;
+  }
+  /* make the image fill the entire thing */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.4s;
   }
 </style>
 <figure>
   <img src={image} />
-  <figcaption>{title}<br />{description}</figcaption>
+  <figcaption><h1>{title}</h1><h4>{description}</h4></figcaption>
 </figure>

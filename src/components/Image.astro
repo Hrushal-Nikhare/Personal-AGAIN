@@ -1,0 +1,13 @@
+---
+export interface Props {
+    image : string;
+    alt ?: string;
+}
+const {image, alt} = Astro.props;
+---
+<style>
+    .image {
+        image-rendering: optimizeSpeed;
+    }
+</style>
+<img src={image} alt={alt} class="image" loading="lazy">
