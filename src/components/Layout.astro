@@ -11,8 +11,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
-        <slot/>
-		<Footer />
+		<div class="contenti">
+			<Header title={SITE_TITLE} />
+			<slot/>
+			<Footer />
+		</div>
 	</body>
 </html>

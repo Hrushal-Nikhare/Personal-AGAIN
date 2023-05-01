@@ -5,6 +5,8 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+  
 body {
 	font-family:'Raleway', Verdana, sans-serif;
 	margin: auto;
@@ -16,6 +18,15 @@ body {
 	overflow-wrap: break-word;
 	line-height: 1.5;
 	color: #444;
+
+		background: linear-gradient(90deg, white 21px, transparent 1%) center, linear-gradient(white 21px, transparent 1%) center, black;
+		background-size: 22px 22px;
+
+	
+}
+.contenti{
+	background-color: white;
+	padding:5px;
 }
 h1,
 h2,
