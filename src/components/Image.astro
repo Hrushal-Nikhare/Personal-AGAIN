@@ -5,9 +5,4 @@ export interface Props {
 }
 const {image, alt} = Astro.props;
 ---
-<style>
-    .image {
-        image-rendering: optimizeSpeed;
-    }
-</style>
-<img src={image} alt={alt} class="image" loading="lazy">
+<img src={image} alt={alt} loading="lazy">
